@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32922.545
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "icUniAuth", "icUniAuth\icUniAuth.vbproj", "{1EDBB34B-E64D-4ED4-820B-92F4CE046577}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1EDBB34B-E64D-4ED4-820B-92F4CE046577}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EDBB34B-E64D-4ED4-820B-92F4CE046577}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EDBB34B-E64D-4ED4-820B-92F4CE046577}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EDBB34B-E64D-4ED4-820B-92F4CE046577}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {33F62BCB-20B7-4E60-B508-D355131F6554}
+	EndGlobalSection
+EndGlobal

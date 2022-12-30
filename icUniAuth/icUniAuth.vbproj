@@ -1,0 +1,533 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{1EDBB34B-E64D-4ED4-820B-92F4CE046577}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>icUniAuth</RootNamespace>
+    <AssemblyName>icUniAuth</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44360</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>icUniAuth.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>icUniAuth.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.9.0.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.9.0\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="DnsClient, Version=1.6.1.0, Culture=neutral, PublicKeyToken=4574bb5573c51424, processorArchitecture=MSIL">
+      <HintPath>..\packages\DnsClient.1.6.1\lib\net471\DnsClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.19.4.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.19.4\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.2.6.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.1.2.6\lib\net46\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.2.6.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.Streams.1.2.6\lib\net46\K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.6.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls, Version=1.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Registry, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Win32.Registry.5.0.0\lib\net461\Microsoft.Win32.Registry.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.31.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.31\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.AccessControl, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.5.0.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.6.0.0\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="ZstdNet, Version=1.4.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.31\lib\net452\ZstdNet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="active.aspx" />
+    <Content Include="api\authorize.aspx" />
+    <Content Include="api\token.aspx" />
+    <Content Include="api\get_user_avatar.aspx" />
+    <Content Include="api\get_user_info.aspx" />
+    <Content Include="logoff.aspx" />
+    <Content Include="portal\authlist.aspx" />
+    <Content Include="portal\changeautoauth.aspx" />
+    <Content Include="portal\manageapp.aspx" />
+    <Content Include="portal\myapp.aspx" />
+    <Content Include="portal\newapp.aspx" />
+    <Content Include="portal\profile.aspx" />
+    <Content Include="portal\profileimage\avatar-1.png" />
+    <Content Include="portal\profileimage\avatar-2.png" />
+    <Content Include="portal\profileimage\avatar-3.png" />
+    <Content Include="portal\profileimage\avatar-4.png" />
+    <Content Include="portal\reset.aspx" />
+    <Content Include="portal\res\all.css" />
+    <Content Include="portal\res\bootstrap.css" />
+    <Content Include="portal\res\bootstrap.js" />
+    <Content Include="portal\res\chart.js" />
+    <Content Include="portal\res\components.css" />
+    <Content Include="portal\res\custom.js" />
+    <Content Include="portal\res\dashboard-ecommerce.js" />
+    <Content Include="portal\res\dataTables.bootstrap4.min.js" />
+    <Content Include="portal\res\datatables.min.js" />
+    <Content Include="portal\res\dataTables.select.min.js" />
+    <Content Include="portal\res\de.svg" />
+    <Content Include="portal\res\fonts\nunito-v9-latin-600.svg" />
+    <Content Include="portal\res\fonts\nunito-v9-latin-700.svg" />
+    <Content Include="portal\res\fonts\nunito-v9-latin-800.svg" />
+    <Content Include="portal\res\fonts\nunito-v9-latin-regular.svg" />
+    <Content Include="portal\res\id.svg" />
+    <Content Include="portal\res\jquery-ui.min.js" />
+    <Content Include="portal\res\jquery.js" />
+    <Content Include="portal\res\jquery_002.js" />
+    <Content Include="portal\res\jquery_003.js" />
+    <Content Include="portal\res\jquery_004.js" />
+    <Content Include="portal\res\jqvmap.css" />
+    <Content Include="portal\res\modules-datatables.js" />
+    <Content Include="portal\res\moment.js" />
+    <Content Include="portal\res\my.svg" />
+    <Content Include="portal\res\owl.css" />
+    <Content Include="portal\res\owl.js" />
+    <Content Include="portal\res\owl_002.css" />
+    <Content Include="portal\res\popper.js" />
+    <Content Include="portal\res\product-1-50.png" />
+    <Content Include="portal\res\product-2-50.png" />
+    <Content Include="portal\res\product-3-50.png" />
+    <Content Include="portal\res\product-4-50.png" />
+    <Content Include="portal\res\product-5-50.png" />
+    <Content Include="portal\res\ps.svg" />
+    <Content Include="portal\res\scripts.js" />
+    <Content Include="portal\res\stisla.js" />
+    <Content Include="portal\res\style.css" />
+    <Content Include="portal\res\summernote-bs4.css" />
+    <Content Include="portal\res\summernote-bs4.js" />
+    <Content Include="portal\res\tooltip.js" />
+    <Content Include="portal\res\us.svg" />
+    <Content Include="portal\res\webfonts\fa-brands-400.svg" />
+    <Content Include="portal\res\webfonts\fa-regular-400.svg" />
+    <Content Include="portal\res\webfonts\fa-solid-900.svg" />
+    <Content Include="default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="portal\revokeauth.aspx" />
+    <Content Include="res\css\dialog.css" />
+    <Content Include="res\css\font-awesome.min.css" />
+    <Content Include="res\css\style.css" />
+    <Content Include="res\images\back.png" />
+    <Content Include="res\images\defaultimg.png" />
+    <Content Include="login.aspx" />
+    <Content Include="portal\authlog.aspx" />
+    <Content Include="register.aspx" />
+    <Content Include="reset.aspx" />
+    <Content Include="res\scripts\dialog.js" />
+    <Content Include="portal\res\fonts\nunito-v9-latin-600.eot" />
+    <Content Include="portal\res\fonts\nunito-v9-latin-600.ttf" />
+    <Content Include="portal\res\fonts\nunito-v9-latin-600.woff" />
+    <Content Include="portal\res\fonts\nunito-v9-latin-600.woff2" />
+    <Content Include="portal\res\fonts\nunito-v9-latin-700.eot" />
+    <Content Include="portal\res\fonts\nunito-v9-latin-700.ttf" />
+    <Content Include="portal\res\fonts\nunito-v9-latin-700.woff" />
+    <Content Include="portal\res\fonts\nunito-v9-latin-700.woff2" />
+    <Content Include="portal\res\fonts\nunito-v9-latin-800.eot" />
+    <Content Include="portal\res\fonts\nunito-v9-latin-800.ttf" />
+    <Content Include="portal\res\fonts\nunito-v9-latin-800.woff" />
+    <Content Include="portal\res\fonts\nunito-v9-latin-800.woff2" />
+    <Content Include="portal\res\fonts\nunito-v9-latin-regular.eot" />
+    <Content Include="portal\res\fonts\nunito-v9-latin-regular.ttf" />
+    <Content Include="portal\res\fonts\nunito-v9-latin-regular.woff" />
+    <Content Include="portal\res\fonts\nunito-v9-latin-regular.woff2" />
+    <Content Include="portal\res\webfonts\desktop.ini" />
+    <Content Include="portal\res\webfonts\fa-brands-400.eot" />
+    <Content Include="portal\res\webfonts\fa-brands-400.ttf" />
+    <Content Include="portal\res\webfonts\fa-brands-400.woff" />
+    <Content Include="portal\res\webfonts\fa-brands-400.woff2" />
+    <Content Include="portal\res\webfonts\fa-regular-400.eot" />
+    <Content Include="portal\res\webfonts\fa-regular-400.ttf" />
+    <Content Include="portal\res\webfonts\fa-regular-400.woff" />
+    <Content Include="portal\res\webfonts\fa-regular-400.woff2" />
+    <Content Include="portal\res\webfonts\fa-solid-900.eot" />
+    <Content Include="portal\res\webfonts\fa-solid-900.ttf" />
+    <Content Include="portal\res\webfonts\fa-solid-900.woff" />
+    <Content Include="portal\res\webfonts\fa-solid-900.woff2" />
+    <Content Include="auth.master" />
+    <Content Include="portal\portal.master" />
+    <Content Include="res\scripts\zepto.js" />
+    <Content Include="setpassword.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="active.aspx.designer.vb">
+      <DependentUpon>active.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="active.aspx.vb">
+      <DependentUpon>active.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="api\authorize.aspx.designer.vb">
+      <DependentUpon>authorize.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\authorize.aspx.vb">
+      <DependentUpon>authorize.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="api\AuthRequestException.vb" />
+    <Compile Include="api\token.aspx.vb">
+      <DependentUpon>token.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\get_user_avatar.aspx.designer.vb">
+      <DependentUpon>get_user_avatar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\get_user_avatar.aspx.vb">
+      <DependentUpon>get_user_avatar.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="api\get_user_info.aspx.designer.vb">
+      <DependentUpon>get_user_info.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\get_user_info.aspx.vb">
+      <DependentUpon>get_user_info.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="api\WebClientEx.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="auth.master.designer.vb">
+      <DependentUpon>auth.master</DependentUpon>
+    </Compile>
+    <Compile Include="auth.master.vb">
+      <DependentUpon>auth.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="logoff.aspx.designer.vb">
+      <DependentUpon>logoff.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="logoff.aspx.vb">
+      <DependentUpon>logoff.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="portal\authlist.aspx.designer.vb">
+      <DependentUpon>authlist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="portal\authlist.aspx.vb">
+      <DependentUpon>authlist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="portal\changeautoauth.aspx.designer.vb">
+      <DependentUpon>changeautoauth.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="portal\changeautoauth.aspx.vb">
+      <DependentUpon>changeautoauth.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="portal\manageapp.aspx.designer.vb">
+      <DependentUpon>manageapp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="portal\manageapp.aspx.vb">
+      <DependentUpon>manageapp.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="portal\myapp.aspx.designer.vb">
+      <DependentUpon>myapp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="portal\myapp.aspx.vb">
+      <DependentUpon>myapp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="portal\newapp.aspx.designer.vb">
+      <DependentUpon>newapp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="portal\newapp.aspx.vb">
+      <DependentUpon>newapp.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="default.aspx.designer.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="default.aspx.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.designer.vb">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.vb">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="portal\portal.master.designer.vb">
+      <DependentUpon>portal.master</DependentUpon>
+    </Compile>
+    <Compile Include="portal\portal.master.vb">
+      <DependentUpon>portal.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="portal\profile.aspx.designer.vb">
+      <DependentUpon>profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="portal\profile.aspx.vb">
+      <DependentUpon>profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="portal\authlog.aspx.designer.vb">
+      <DependentUpon>authlog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="portal\authlog.aspx.vb">
+      <DependentUpon>authlog.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="portal\reset.aspx.designer.vb">
+      <DependentUpon>reset.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="portal\reset.aspx.vb">
+      <DependentUpon>reset.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="portal\revokeauth.aspx.designer.vb">
+      <DependentUpon>revokeauth.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="portal\revokeauth.aspx.vb">
+      <DependentUpon>revokeauth.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="register.aspx.designer.vb">
+      <DependentUpon>register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="register.aspx.vb">
+      <DependentUpon>register.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="reset.aspx.designer.vb">
+      <DependentUpon>reset.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reset.aspx.vb">
+      <DependentUpon>reset.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="setpassword.aspx.designer.vb">
+      <DependentUpon>setpassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="setpassword.aspx.vb">
+      <DependentUpon>setpassword.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Settings.vb" />
+    <Compile Include="utils\AccreditUtils.vb" />
+    <Compile Include="utils\AuthUtils.vb" />
+    <Compile Include="utils\DatabaseUtils.vb" />
+    <Compile Include="utils\HtmlParse.vb" />
+    <Compile Include="utils\LoginUtils.vb" />
+    <Compile Include="utils\ServerConfigUtils.vb" />
+    <Compile Include="utils\Utils.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="libman.json" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <None Include="server.conf" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49841</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44360/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

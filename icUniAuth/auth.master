@@ -1,0 +1,45 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="auth.master.vb" Inherits="icUniAuth.auth" %>
+
+<!DOCTYPE html>
+
+<html>
+<script src="/res/scripts/zepto.js"></script>
+<script type="text/javascript" src="/res/scripts/dialog.js"></script>
+<asp:ContentPlaceHolder ID="scripts" runat="server">
+</asp:ContentPlaceHolder>
+<head runat="server">
+    <title><%: Page.Title.ToString %> - icUniAuth统一认证</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/res/css/style.css" type="text/css" media="all" />
+    <link rel="stylesheet" type="text/css" href="/res/css/dialog.css">
+    <link rel="stylesheet" href="/res/css/font-awesome.min.css" type="text/css" media="all">
+</head>
+
+<body background="/res/images/back.png">
+
+        <section class="w3l-hotair-form">
+            <h1 style="margin-top: 20px">icUniAuth统一认证</h1>
+            <div class="container">
+                <div class="workinghny-form-grid">
+                    <div class="main-hotair">
+                        <div class="content-wthree">
+
+                            <form id="form1" runat="server">
+                                <div>
+                                    <asp:ContentPlaceHolder ID="bodys" runat="server">
+                                    </asp:ContentPlaceHolder>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="copyright text-center">
+                <p class="copy-footer-29">Copyright © <%: Now.Year.ToString %> icSecLab. All rights reserved.</p>
+            </div>
+        </section>
+</body>
+
+</html>

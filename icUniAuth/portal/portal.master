@@ -1,0 +1,293 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="portal.master.vb" Inherits="icUniAuth.portal" %>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+    <title>管理面板 - icUniAuth统一认证</title>
+
+    <!-- General CSS Files -->
+    <link rel="stylesheet" href="/portal/res/bootstrap.css">
+    <link rel="stylesheet" href="/portal/res/all.css">
+
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="/portal/res/jqvmap.css">
+    <link rel="stylesheet" href="/portal/res/summernote-bs4.css">
+    <link rel="stylesheet" href="/portal/res/owl.css">
+    <link rel="stylesheet" href="/portal/res/owl_002.css">
+
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="/portal/res/style.css">
+    <link rel="stylesheet" href="/portal/res/components.css">
+    <style type="text/css">
+        /* Chart.js */
+        @-webkit-keyframes chartjs-render-animation {
+            from {
+                opacity: 0.99
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        @keyframes chartjs-render-animation {
+            from {
+                opacity: 0.99
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        .chartjs-render-monitor {
+            -webkit-animation: chartjs-render-animation 0.001s;
+            animation: chartjs-render-animation 0.001s;
+        }
+    </style>
+    <style type="text/css">
+        .jqstooltip {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            visibility: hidden;
+            background: rgb(0, 0, 0) transparent;
+            background-color: rgba(0,0,0,0.6);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+            -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+            color: white;
+            font: 10px arial, san serif;
+            text-align: left;
+            white-space: nowrap;
+            padding: 5px;
+            border: 1px solid white;
+            z-index: 10000;
+        }
+
+        .jqsfield {
+            color: white;
+            font: 10px arial, san serif;
+            text-align: left;
+        }
+    </style>
+    <style type="text/css">
+        /* Chart.js */
+        @-webkit-keyframes chartjs-render-animation {
+            from {
+                opacity: 0.99
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        @keyframes chartjs-render-animation {
+            from {
+                opacity: 0.99
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        .chartjs-render-monitor {
+            -webkit-animation: chartjs-render-animation 0.001s;
+            animation: chartjs-render-animation 0.001s;
+        }
+    </style>
+    <style type="text/css">
+        .jqstooltip {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            visibility: hidden;
+            background: rgb(0, 0, 0) transparent;
+            background-color: rgba(0,0,0,0.6);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+            -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+            color: white;
+            font: 10px arial, san serif;
+            text-align: left;
+            white-space: nowrap;
+            padding: 5px;
+            border: 1px solid white;
+            z-index: 10000;
+        }
+
+        .jqsfield {
+            color: white;
+            font: 10px arial, san serif;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="main-wrapper main-wrapper-1">
+            <div class="navbar-bg"></div>
+            <form runat="server">
+                <nav class="navbar navbar-expand-lg main-navbar">
+                    <t class="form-inline mr-auto">
+                        <ul class="navbar-nav mr-3">
+                            <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a></li>
+
+                        </ul>
+
+                    </t>
+
+                    <ul class="navbar-nav navbar-right">
+
+                        <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+                            <asp:Image ID="Image1" runat="server" CssClass="rounded-circle mr-1" />
+                            <div class="d-sm-none d-lg-inline-block">
+                                欢迎您：<%:UInfo.NickName %>
+                            </div>
+                        </a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a href="/portal/profile" class="dropdown-item has-icon">
+                                    <i class="far fa-user"></i>个人信息
+                                </a>
+
+                                <div class="dropdown-divider"></div>
+                                <a href="/logoff" class="dropdown-item has-icon text-danger">
+                                    <i class="fas fa-sign-out-alt"></i>注销
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+
+                </nav>
+
+                <div class="main-sidebar sidebar-style-2" style="overflow: hidden; outline: currentcolor none medium;" tabindex="1">
+                    <aside id="sidebar-wrapper">
+                        <div class="sidebar-brand">
+                            <p>ic<sup>92</sup>Uni<sup>79</sup>Auth</p>
+                        </div>
+                        <div class="sidebar-brand sidebar-brand-sm">
+                            <p><sup>79</sup>Au</p>
+                        </div>
+                        <ul class="sidebar-menu">
+                            <li class="menu-header">授权管理</li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>授权管理</span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="nav-link" href="/portal/authlist">授权列表</a></li>
+                                    <li><a class="nav-link" href="/portal/authlog">授权日志</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-header">账号管理</li>
+
+                            <li class="dropdown active">
+                                <a class="nav-link" href="/portal/profile"><i class="fas fa-user"></i><span>个人信息</span></a>
+
+                            </li>
+
+                            <li class="dropdown active">
+
+                                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="far fa-square"></i><span>账号管理</span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="nav-link" href="/reset">重置密码</a></li>
+                                    <!-- <li><a class="nav-link" href="delete">销户</a></li> !-->
+                                </ul>
+                            </li>
+
+
+                            <li class="menu-header">开发者功能</li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link has-dropdown"><i class="fas fa-th-large"></i><span>APP接入</span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="nav-link" href="/portal/newapp">APP接入</a></li>
+                                    <li><a class="nav-link" href="/portal/myapp">我的APP</a></li>
+                                </ul>
+                            </li>
+
+                            <!--
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link has-dropdown"><i class="far fa-file-alt"></i><span>文档</span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="nav-link" href="/doc/apihelp">API接口</a></li>
+                                    <li><a class="nav-link" href="/doc/help">使用帮助</a></li>
+                                </ul>
+                            </li>
+
+                            -->
+
+                        </ul>
+
+                        <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
+                            <a href="/logoff" class="btn btn-primary btn-lg btn-block btn-icon-split">
+                                <i class="fas fa-sign-out-alt"></i>注销
+                            </a>
+                        </div>
+                    </aside>
+                </div>
+
+                <!-- Main Content -->
+                <div class="main-content">
+                    <section class="section">
+
+
+
+                        <div class="row">
+
+                            <div class="col-md-8" cssclass="col-md-8">
+                                <div class="card">
+                                    <asp:ContentPlaceHolder ID="CPH_B" runat="server">
+                                    </asp:ContentPlaceHolder>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </section>
+                </div>
+                <footer class="main-footer">
+                    <div class="footer-left">
+                        <h7>Copyright © <%: Now.Year.ToString %> icSecLab. All rights reserved.</h7>
+                    </div>
+
+                </footer>
+            </form>
+        </div>
+    </div>
+
+    <!-- General JS Scripts -->
+    <script src="/portal/res/jquery_003.js"></script>
+    <script src="/portal/res/popper.js"></script>
+    <script src="/portal/res/tooltip.js"></script>
+    <script src="/portal/res/bootstrap.js"></script>
+    <script src="/portal/res/jquery_004.js"></script>
+    <script src="/portal/res/moment.js"></script>
+    <script src="/portal/res/stisla.js"></script>
+
+    <!-- JS Libraies -->
+    <script src="/portal/res/jquery.js"></script>
+    <script src="/portal/res/chart.js"></script>
+    <script src="/portal/res/owl.js"></script>
+    <script src="/portal/res/summernote-bs4.js"></script>
+    <script src="/portal/res/jquery_002.js"></script>
+
+
+    <!-- Template JS File -->
+    <script src="/portal/res/scripts.js"></script>
+    <script src="/portal/res/custom.js"></script>
+
+    <!-- JS Libraies -->
+    <script src="/portal/res/datatables.min.js"></script>
+    <script src="/portal/res/dataTables.bootstrap4.min.js"></script>
+    <script src="/portal/res/dataTables.select.min.js"></script>
+    <script src="/portal/res/jquery-ui.min.js"></script>
+
+    <!-- Page Specific JS File -->
+    <script src="/portal/res/modules-datatables.js"></script>
+
+</body>
+
+</html>
