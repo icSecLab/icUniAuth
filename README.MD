@@ -1,5 +1,15 @@
 # icUniAuth
-------
+
+### [使用帮助](https://github.com/icSecLab/icUniAuth/wiki)
+
+简体中文 | [English](./README.en-us.md)
+
+> 注:其他语言版本的文档可能存在更新不及时的情况，当出现不一致时，以简体中文版文档为准。
+
+> Notice:The documents in other languages may not be updated in time. When inconsistent, the simplified Chinese documents shall prevail. 
+
+----------
+
 ## 一款安全可靠兼容OAuth2.0的统一认证系统
 
 项目部署地址:
